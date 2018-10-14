@@ -1,0 +1,270 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>Practical Machine Learning Coursera Peer Assessment</title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1561.4">
+  <style type="text/css">
+    p.p4 {margin: 0.0px 0.0px 10.0px 0.0px; line-height: 17.0px; font: 14.0px Times; color: #333333; -webkit-text-stroke: #333333}
+    p.p6 {margin: 0.0px 0.0px 10.0px 0.0px; line-height: 17.0px; font: 14.0px Times; color: #0000ee; -webkit-text-stroke: #dd4814}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 15.0px; font: 13.0px Courier; color: #60a0b0; -webkit-text-stroke: #60a0b0; background-color: #f5f5f5}
+    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 15.0px; font: 13.0px Courier; color: #333333; -webkit-text-stroke: #333333; background-color: #f5f5f5}
+    p.p9 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 15.0px; font: 13.0px Courier; color: #333333; -webkit-text-stroke: #333333}
+    p.p10 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 15.0px; font: 13.0px Courier; color: #902000; -webkit-text-stroke: #902000; background-color: #f5f5f5}
+    p.p11 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 15.0px; font: 13.0px Courier; color: #007020; -webkit-text-stroke: #007020; background-color: #f5f5f5}
+    p.p12 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 15.0px; font: 13.0px Courier; color: #4070a0; -webkit-text-stroke: #4070a0; background-color: #f5f5f5}
+    p.p13 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 15.0px; font: 13.0px Courier; color: #333333; -webkit-text-stroke: #333333; background-color: #ffffff}
+    p.p14 {margin: 0.0px 0.0px 10.0px 0.0px; line-height: 17.0px; font: 14.0px Times; color: #333333; -webkit-text-stroke: #333333; min-height: 18.0px}
+    span.s1 {font-kerning: none}
+    span.s2 {font: 14.0px Times; text-decoration: underline ; font-kerning: none; color: #dd4814; -webkit-text-stroke: 0px #dd4814}
+    span.s3 {text-decoration: underline ; font-kerning: none}
+    span.s4 {font-kerning: none; color: #007020; -webkit-text-stroke: 0px #007020}
+    span.s5 {font-kerning: none; color: #333333; -webkit-text-stroke: 0px #333333}
+    span.s6 {font-kerning: none; color: #902000; -webkit-text-stroke: 0px #902000}
+    span.s7 {font-kerning: none; color: #4070a0; -webkit-text-stroke: 0px #4070a0}
+    span.s8 {font-kerning: none; color: #40a070; -webkit-text-stroke: 0px #40a070}
+    span.s9 {font-kerning: none; color: #60a0b0; -webkit-text-stroke: 0px #60a0b0}
+  </style>
+</head>
+<body>
+<h1 style="margin: 0.0px 0.0px 10.0px 0.0px; line-height: 41.0px; font: 36.0px Times; color: #333333; -webkit-text-stroke: #333333"><span class="s1">Practical Machine Learning Coursera Peer Assessment</span></h1>
+<h1 style="margin: 0.0px 0.0px 10.0px 0.0px; line-height: 22.0px; font: 18.0px Times; color: #333333; -webkit-text-stroke: #333333"><span class="s1"><br>
+</span></h1>
+<h2 style="margin: 0.0px 0.0px 10.0px 0.0px; line-height: 36.0px; font: 30.0px Times; color: #333333; -webkit-text-stroke: #333333"><span class="s1">Summary</span></h2>
+<p class="p4"><span class="s1">This report uses machine learning algorithms to predict the manner in which users of exercise devices exercise.</span></p>
+<h3 style="margin: 0.0px 0.0px 10.0px 0.0px; line-height: 28.0px; font: 24.0px Times; color: #333333; -webkit-text-stroke: #333333"><span class="s1">Background</span></h3>
+<p class="p4"><span class="s1">Using devices such as Jawbone Up, Nike FuelBand, and Fitbit it is now possible to collect a large amount of data about personal activity relatively inexpensively. These type of devices are part of the quantified self movement – a group of enthusiasts who take measurements about themselves regularly to improve their health, to find patterns in their behavior, or because they are tech geeks. One thing that people regularly do is quantify how much of a particular activity they do, but they rarely quantify how well they do it. In this project, your goal will be to use data from accelerometers on the belt, forearm, arm, and dumbell of 6 participants. They were asked to perform barbell lifts correctly and incorrectly in 5 different ways. More information is available from the website <a href="http://groupware.les.inf.puc-rio.br/har"><span class="s2">here:</span></a> (see the section on the Weight Lifting Exercise Dataset).</span></p>
+<h3 style="margin: 0.0px 0.0px 10.0px 0.0px; line-height: 28.0px; font: 24.0px Times; color: #333333; -webkit-text-stroke: #333333"><span class="s1">Data</span></h3>
+<p class="p4"><span class="s1">The training data for this project are available here:</span></p>
+<p class="p6"><span class="s3"><a href="https://d396qusza40orc.cloudfront.net/predmachlearn/pml-training.csv">https://d396qusza40orc.cloudfront.net/predmachlearn/pml-training.csv</a></span></p>
+<p class="p4"><span class="s1">The test data are available here:</span></p>
+<p class="p6"><span class="s3"><a href="https://d396qusza40orc.cloudfront.net/predmachlearn/pml-testing.csv">https://d396qusza40orc.cloudfront.net/predmachlearn/pml-testing.csv</a></span></p>
+<h3 style="margin: 0.0px 0.0px 10.0px 0.0px; line-height: 28.0px; font: 24.0px Times; color: #333333; -webkit-text-stroke: #333333"><span class="s1">Set the work environment and knitr options</span></h3>
+<p class="p7"><span class="s4"><b>rm</b></span><span class="s5">(</span><span class="s6">list=</span><span class="s4"><b>ls</b></span><span class="s5">(</span><span class="s6">all=</span><span class="s4">TRUE</span><span class="s5">)) </span><span class="s1"><i>#start with empty workspace</i></span></p>
+<p class="p8"><span class="s1">startTime &lt;-</span><span class="s7"> </span><span class="s4"><b>Sys.time</b></span><span class="s1">()</span></p>
+<p class="p9"><span class="s1"><br>
+</span></p>
+<p class="p8"><span class="s4"><b>library</b></span><span class="s1">(knitr)</span></p>
+<p class="p10"><span class="s5">opts_chunk$</span><span class="s4"><b>set</b></span><span class="s5">(</span><span class="s1">echo =</span><span class="s5"> </span><span class="s4">TRUE</span><span class="s5">, </span><span class="s1">cache=</span><span class="s5"> </span><span class="s4">TRUE</span><span class="s5">, </span><span class="s1">results =</span><span class="s5"> </span><span class="s7">'hold'</span><span class="s5">)</span></p>
+<h3 style="margin: 0.0px 0.0px 10.0px 0.0px; line-height: 28.0px; font: 24.0px Times; color: #333333; -webkit-text-stroke: #333333"><span class="s1">Load libraries and Set Seed</span></h3>
+<p class="p4"><span class="s1">Load all libraries used, and setting seed for reproducibility. Results Hidden, Warnings FALSE and Messages FALSE</span></p>
+<p class="p8"><span class="s4"><b>library</b></span><span class="s1">(ElemStatLearn)</span></p>
+<p class="p8"><span class="s4"><b>library</b></span><span class="s1">(caret)</span></p>
+<p class="p8"><span class="s4"><b>library</b></span><span class="s1">(rpart)</span></p>
+<p class="p8"><span class="s4"><b>library</b></span><span class="s1">(randomForest)</span></p>
+<p class="p8"><span class="s4"><b>library</b></span><span class="s1">(RCurl)</span></p>
+<p class="p11"><span class="s1"><b>set.seed</b></span><span class="s5">(</span><span class="s8">2014</span><span class="s5">)</span></p>
+<h3 style="margin: 0.0px 0.0px 10.0px 0.0px; line-height: 28.0px; font: 24.0px Times; color: #333333; -webkit-text-stroke: #333333"><span class="s1">Load and prepare the data and clean up the data</span></h3>
+<p class="p4"><span class="s1">Load and prepare the data</span></p>
+<p class="p12"><span class="s5">trainingLink &lt;-</span><span class="s1"> </span><span class="s4"><b>getURL</b></span><span class="s5">(</span><span class="s1">"http://d396qusza40orc.cloudfront.net/predmachlearn/pml-training.csv"</span><span class="s5">)</span></p>
+<p class="p8"><span class="s1">pml_CSV<span class="Apple-converted-space">  </span>&lt;-</span><span class="s7"> </span><span class="s4"><b>read.csv</b></span><span class="s1">(</span><span class="s6">text =</span><span class="s1"> trainingLink, </span><span class="s6">header=</span><span class="s4">TRUE</span><span class="s1">, </span><span class="s6">sep=</span><span class="s7">","</span><span class="s1">, </span><span class="s6">na.strings=</span><span class="s4"><b>c</b></span><span class="s1">(</span><span class="s7">"NA"</span><span class="s1">,</span><span class="s7">""</span><span class="s1">))</span></p>
+<p class="p9"><span class="s1"><br>
+</span></p>
+<p class="p7"><span class="s5">pml_CSV &lt;-</span><span class="s7"> </span><span class="s5">pml_CSV[,-</span><span class="s8">1</span><span class="s5">] </span><span class="s1"><i># Remove the first column that represents a ID Row</i></span></p>
+<h3 style="margin: 0.0px 0.0px 10.0px 0.0px; line-height: 28.0px; font: 24.0px Times; color: #333333; -webkit-text-stroke: #333333"><span class="s1">Data Sets Partitions Definitions</span></h3>
+<p class="p4"><span class="s1">Create data partitions of training and validating data sets.</span></p>
+<p class="p8"><span class="s1">inTrain =</span><span class="s7"> </span><span class="s4"><b>createDataPartition</b></span><span class="s1">(pml_CSV$classe, </span><span class="s6">p=</span><span class="s8">0.60</span><span class="s1">, </span><span class="s6">list=</span><span class="s4">FALSE</span><span class="s1">)</span></p>
+<p class="p8"><span class="s1">training =</span><span class="s7"> </span><span class="s1">pml_CSV[inTrain,]</span></p>
+<p class="p8"><span class="s1">validating =</span><span class="s7"> </span><span class="s1">pml_CSV[-inTrain,]</span></p>
+<p class="p9"><span class="s1"><br>
+</span></p>
+<p class="p7"><span class="s1"><i># number of rows and columns of data in the training set</i></span></p>
+<p class="p9"><span class="s1"><br>
+</span></p>
+<p class="p8"><span class="s4"><b>dim</b></span><span class="s1">(training)</span></p>
+<p class="p9"><span class="s1"><br>
+</span></p>
+<p class="p7"><span class="s1"><i># number of rows and columns of data in the validating set</i></span></p>
+<p class="p9"><span class="s1"><br>
+</span></p>
+<p class="p8"><span class="s4"><b>dim</b></span><span class="s1">(validating)</span></p>
+<p class="p13"><span class="s1">## [1] 11776 <span class="Apple-converted-space">  </span>159</span></p>
+<p class="p13"><span class="s1">## [1] 7846<span class="Apple-converted-space">  </span>159</span></p>
+<h2 style="margin: 0.0px 0.0px 10.0px 0.0px; line-height: 36.0px; font: 30.0px Times; color: #333333; -webkit-text-stroke: #333333"><span class="s1">Data Exploration and Cleaning</span></h2>
+<p class="p4"><span class="s1">Since we choose a random forest model and we have a data set with too many columns, first we check if we have many problems with columns without data. So, remove columns that have less than 60% of data entered.</span></p>
+<p class="p7"><span class="s1"><i># Number of cols with less than 60% of data</i></span></p>
+<p class="p8"><span class="s4"><b>sum</b></span><span class="s1">((</span><span class="s4"><b>colSums</b></span><span class="s1">(!</span><span class="s4"><b>is.na</b></span><span class="s1">(training[,-</span><span class="s4"><b>ncol</b></span><span class="s1">(training)])) &lt;</span><span class="s7"> </span><span class="s8">0.6</span><span class="s1">*</span><span class="s4"><b>nrow</b></span><span class="s1">(training)))</span></p>
+<p class="p4"><span class="s1">[1] 100</span></p>
+<p class="p7"><span class="s1"><i># apply our definition of remove columns that most doesn't have data, before its apply to the model.</i></span></p>
+<p class="p9"><span class="s1"><br>
+</span></p>
+<p class="p8"><span class="s1">Keep &lt;-</span><span class="s7"> </span><span class="s4"><b>c</b></span><span class="s1">((</span><span class="s4"><b>colSums</b></span><span class="s1">(!</span><span class="s4"><b>is.na</b></span><span class="s1">(training[,-</span><span class="s4"><b>ncol</b></span><span class="s1">(training)])) &gt;=</span><span class="s7"> </span><span class="s8">0.6</span><span class="s1">*</span><span class="s4"><b>nrow</b></span><span class="s1">(training)))</span></p>
+<p class="p8"><span class="s1">training <span class="Apple-converted-space">  </span>&lt;-</span><span class="s7"><span class="Apple-converted-space">  </span></span><span class="s1">training[,Keep]</span></p>
+<p class="p8"><span class="s1">validating &lt;-</span><span class="s7"> </span><span class="s1">validating[,Keep]</span></p>
+<p class="p9"><span class="s1"><br>
+</span></p>
+<p class="p7"><span class="s1"><i># number of rows and columns of data in the final training set</i></span></p>
+<p class="p9"><span class="s1"><br>
+</span></p>
+<p class="p8"><span class="s4"><b>dim</b></span><span class="s1">(training)</span></p>
+<p class="p4"><span class="s1">[1] 11776 59</span></p>
+<p class="p7"><span class="s1"><i># number of rows and columns of data in the final validating set</i></span></p>
+<p class="p9"><span class="s1"><br>
+</span></p>
+<p class="p8"><span class="s4"><b>dim</b></span><span class="s1">(validating)</span></p>
+<p class="p4"><span class="s1">[1] 7846 59</span></p>
+<h2 style="margin: 0.0px 0.0px 10.0px 0.0px; line-height: 36.0px; font: 30.0px Times; color: #333333; -webkit-text-stroke: #333333"><span class="s1">Modeling</span></h2>
+<p class="p4"><span class="s1">In random forests, there is no need for cross-validation or a separate test set to get an unbiased estimate of the test set error. It is estimated internally, during the execution. So, we proceed with the training the model (Random Forest) with the training data set.</span></p>
+<p class="p8"><span class="s1">model &lt;-</span><span class="s7"> </span><span class="s4"><b>randomForest</b></span><span class="s1">(classe~.,</span><span class="s6">data=</span><span class="s1">training)</span></p>
+<p class="p8"><span class="s4"><b>print</b></span><span class="s1">(model)</span></p>
+<p class="p13"><span class="s1">##<span class="Apple-converted-space"> </span></span></p>
+<p class="p13"><span class="s1">## Call:</span></p>
+<p class="p13"><span class="s1">##<span class="Apple-converted-space">  </span>randomForest(formula = classe ~ ., data = training)<span class="Apple-converted-space"> </span></span></p>
+<p class="p13"><span class="s1">##<span class="Apple-converted-space">                </span>Type of random forest: classification</span></p>
+<p class="p13"><span class="s1">##<span class="Apple-converted-space">                      </span>Number of trees: 500</span></p>
+<p class="p13"><span class="s1">## No. of variables tried at each split: 7</span></p>
+<p class="p13"><span class="s1">##<span class="Apple-converted-space"> </span></span></p>
+<p class="p13"><span class="s1">## <span class="Apple-converted-space">        </span>OOB estimate of<span class="Apple-converted-space">  </span>error rate: 0.19%</span></p>
+<p class="p13"><span class="s1">## Confusion matrix:</span></p>
+<p class="p13"><span class="s1">##<span class="Apple-converted-space">      </span>A<span class="Apple-converted-space">    </span>B<span class="Apple-converted-space">    </span>C<span class="Apple-converted-space">    </span>D<span class="Apple-converted-space">    </span>E class.error</span></p>
+<p class="p13"><span class="s1">## A 3348<span class="Apple-converted-space">    </span>0<span class="Apple-converted-space">    </span>0<span class="Apple-converted-space">    </span>0<span class="Apple-converted-space">    </span>0 0.000000000</span></p>
+<p class="p13"><span class="s1">## B<span class="Apple-converted-space">    </span>3 2276<span class="Apple-converted-space">    </span>0<span class="Apple-converted-space">    </span>0<span class="Apple-converted-space">    </span>0 0.001316367</span></p>
+<p class="p13"><span class="s1">## C<span class="Apple-converted-space">    </span>0<span class="Apple-converted-space">    </span>9 2044<span class="Apple-converted-space">    </span>1<span class="Apple-converted-space">    </span>0 0.004868549</span></p>
+<p class="p13"><span class="s1">## D<span class="Apple-converted-space">    </span>0<span class="Apple-converted-space">    </span>0<span class="Apple-converted-space">    </span>5 1924<span class="Apple-converted-space">    </span>1 0.003108808</span></p>
+<p class="p13"><span class="s1">## E<span class="Apple-converted-space">    </span>0<span class="Apple-converted-space">    </span>0<span class="Apple-converted-space">    </span>0<span class="Apple-converted-space">    </span>3 2162 0.001385681</span></p>
+<h3 style="margin: 0.0px 0.0px 10.0px 0.0px; line-height: 28.0px; font: 24.0px Times; color: #333333; -webkit-text-stroke: #333333"><span class="s1">Model Evaluate</span></h3>
+<p class="p4"><span class="s1">And proceed with the verification of variable importance measures as produced by random Forest:</span></p>
+<p class="p11"><span class="s1"><b>importance</b></span><span class="s5">(model)</span></p>
+<p class="p13"><span class="s1">##<span class="Apple-converted-space">                      </span>MeanDecreaseGini</span></p>
+<p class="p13"><span class="s1">## user_name<span class="Apple-converted-space">                  </span>90.3730521</span></p>
+<p class="p13"><span class="s1">## raw_timestamp_part_1<span class="Apple-converted-space">      </span>932.6373613</span></p>
+<p class="p13"><span class="s1">## raw_timestamp_part_2 <span class="Apple-converted-space">      </span>11.2278639</span></p>
+<p class="p13"><span class="s1">## cvtd_timestamp <span class="Apple-converted-space">          </span>1417.2774858</span></p>
+<p class="p13"><span class="s1">## new_window<span class="Apple-converted-space">                  </span>0.2375014</span></p>
+<p class="p13"><span class="s1">## num_window<span class="Apple-converted-space">                </span>538.0882905</span></p>
+<p class="p13"><span class="s1">## roll_belt <span class="Apple-converted-space">                </span>547.0536679</span></p>
+<p class="p13"><span class="s1">## pitch_belt<span class="Apple-converted-space">                </span>289.9572495</span></p>
+<p class="p13"><span class="s1">## yaw_belt<span class="Apple-converted-space">                  </span>342.2318442</span></p>
+<p class="p13"><span class="s1">## total_accel_belt<span class="Apple-converted-space">          </span>110.0633448</span></p>
+<p class="p13"><span class="s1">## gyros_belt_x <span class="Apple-converted-space">              </span>39.5889951</span></p>
+<p class="p13"><span class="s1">## gyros_belt_y <span class="Apple-converted-space">              </span>45.1635594</span></p>
+<p class="p13"><span class="s1">## gyros_belt_z<span class="Apple-converted-space">              </span>116.7332576</span></p>
+<p class="p13"><span class="s1">## accel_belt_x <span class="Apple-converted-space">              </span>65.1914831</span></p>
+<p class="p13"><span class="s1">## accel_belt_y <span class="Apple-converted-space">              </span>71.6575192</span></p>
+<p class="p13"><span class="s1">## accel_belt_z<span class="Apple-converted-space">              </span>174.5775863</span></p>
+<p class="p13"><span class="s1">## magnet_belt_x <span class="Apple-converted-space">            </span>109.5946175</span></p>
+<p class="p13"><span class="s1">## magnet_belt_y <span class="Apple-converted-space">            </span>198.2364446</span></p>
+<p class="p13"><span class="s1">## magnet_belt_z <span class="Apple-converted-space">            </span>174.1100246</span></p>
+<p class="p13"><span class="s1">## roll_arm<span class="Apple-converted-space">                  </span>123.8385402</span></p>
+<p class="p13"><span class="s1">## pitch_arm<span class="Apple-converted-space">                  </span>56.7411710</span></p>
+<p class="p13"><span class="s1">## yaw_arm<span class="Apple-converted-space">                    </span>80.6033881</span></p>
+<p class="p13"><span class="s1">## total_accel_arm<span class="Apple-converted-space">            </span>26.3682367</span></p>
+<p class="p13"><span class="s1">## gyros_arm_x<span class="Apple-converted-space">                </span>42.2808067</span></p>
+<p class="p13"><span class="s1">## gyros_arm_y<span class="Apple-converted-space">                </span>41.6757042</span></p>
+<p class="p13"><span class="s1">## gyros_arm_z<span class="Apple-converted-space">                </span>19.4557642</span></p>
+<p class="p13"><span class="s1">## accel_arm_x<span class="Apple-converted-space">                </span>94.6270535</span></p>
+<p class="p13"><span class="s1">## accel_arm_y<span class="Apple-converted-space">                </span>54.4922538</span></p>
+<p class="p13"><span class="s1">## accel_arm_z<span class="Apple-converted-space">                </span>40.7576689</span></p>
+<p class="p13"><span class="s1">## magnet_arm_x<span class="Apple-converted-space">              </span>105.2342845</span></p>
+<p class="p13"><span class="s1">## magnet_arm_y <span class="Apple-converted-space">              </span>79.6373607</span></p>
+<p class="p13"><span class="s1">## magnet_arm_z <span class="Apple-converted-space">              </span>57.7204415</span></p>
+<p class="p13"><span class="s1">## roll_dumbbell <span class="Apple-converted-space">            </span>197.6213608</span></p>
+<p class="p13"><span class="s1">## pitch_dumbbell <span class="Apple-converted-space">            </span>75.0525013</span></p>
+<p class="p13"><span class="s1">## yaw_dumbbell<span class="Apple-converted-space">              </span>104.9213658</span></p>
+<p class="p13"><span class="s1">## total_accel_dumbbell<span class="Apple-converted-space">      </span>112.5343776</span></p>
+<p class="p13"><span class="s1">## gyros_dumbbell_x <span class="Apple-converted-space">          </span>42.7839013</span></p>
+<p class="p13"><span class="s1">## gyros_dumbbell_y<span class="Apple-converted-space">          </span>110.7356305</span></p>
+<p class="p13"><span class="s1">## gyros_dumbbell_z <span class="Apple-converted-space">          </span>25.1911639</span></p>
+<p class="p13"><span class="s1">## accel_dumbbell_x<span class="Apple-converted-space">          </span>126.2760046</span></p>
+<p class="p13"><span class="s1">## accel_dumbbell_y<span class="Apple-converted-space">          </span>183.1386045</span></p>
+<p class="p13"><span class="s1">## accel_dumbbell_z<span class="Apple-converted-space">          </span>140.3221880</span></p>
+<p class="p13"><span class="s1">## magnet_dumbbell_x <span class="Apple-converted-space">        </span>234.3036947</span></p>
+<p class="p13"><span class="s1">## magnet_dumbbell_y <span class="Apple-converted-space">        </span>321.8106105</span></p>
+<p class="p13"><span class="s1">## magnet_dumbbell_z <span class="Apple-converted-space">        </span>299.7706537</span></p>
+<p class="p13"><span class="s1">## roll_forearm<span class="Apple-converted-space">              </span>232.9445408</span></p>
+<p class="p13"><span class="s1">## pitch_forearm <span class="Apple-converted-space">            </span>293.0121796</span></p>
+<p class="p13"><span class="s1">## yaw_forearm<span class="Apple-converted-space">                </span>59.1226542</span></p>
+<p class="p13"><span class="s1">## total_accel_forearm<span class="Apple-converted-space">        </span>33.2545324</span></p>
+<p class="p13"><span class="s1">## gyros_forearm_x<span class="Apple-converted-space">            </span>24.9673052</span></p>
+<p class="p13"><span class="s1">## gyros_forearm_y<span class="Apple-converted-space">            </span>41.4192787</span></p>
+<p class="p13"><span class="s1">## gyros_forearm_z<span class="Apple-converted-space">            </span>26.9075827</span></p>
+<p class="p13"><span class="s1">## accel_forearm_x <span class="Apple-converted-space">          </span>133.6714294</span></p>
+<p class="p13"><span class="s1">## accel_forearm_y<span class="Apple-converted-space">            </span>45.3258310</span></p>
+<p class="p13"><span class="s1">## accel_forearm_z<span class="Apple-converted-space">            </span>96.1075329</span></p>
+<p class="p13"><span class="s1">## magnet_forearm_x <span class="Apple-converted-space">          </span>76.6923241</span></p>
+<p class="p13"><span class="s1">## magnet_forearm_y <span class="Apple-converted-space">          </span>76.9926445</span></p>
+<p class="p13"><span class="s1">## magnet_forearm_z <span class="Apple-converted-space">          </span>97.9443069</span></p>
+<p class="p4"><span class="s1">Now we evaluate our model results through confusion Matrix.</span></p>
+<p class="p8"><span class="s4"><b>confusionMatrix</b></span><span class="s1">(</span><span class="s4"><b>predict</b></span><span class="s1">(model,</span><span class="s6">newdata=</span><span class="s1">validating[,-</span><span class="s4"><b>ncol</b></span><span class="s1">(validating)]),validating$classe)</span></p>
+<p class="p13"><span class="s1">## Confusion Matrix and Statistics</span></p>
+<p class="p13"><span class="s1">##<span class="Apple-converted-space"> </span></span></p>
+<p class="p13"><span class="s1">## <span class="Apple-converted-space">          </span>Reference</span></p>
+<p class="p13"><span class="s1">## Prediction<span class="Apple-converted-space">    </span>A<span class="Apple-converted-space">    </span>B<span class="Apple-converted-space">    </span>C<span class="Apple-converted-space">    </span>D<span class="Apple-converted-space">    </span>E</span></p>
+<p class="p13"><span class="s1">##<span class="Apple-converted-space">          </span>A 2231<span class="Apple-converted-space">    </span>0<span class="Apple-converted-space">    </span>0<span class="Apple-converted-space">    </span>0<span class="Apple-converted-space">    </span>0</span></p>
+<p class="p13"><span class="s1">##<span class="Apple-converted-space">          </span>B<span class="Apple-converted-space">    </span>1 1518<span class="Apple-converted-space">    </span>5<span class="Apple-converted-space">    </span>0<span class="Apple-converted-space">    </span>0</span></p>
+<p class="p13"><span class="s1">##<span class="Apple-converted-space">          </span>C<span class="Apple-converted-space">    </span>0<span class="Apple-converted-space">    </span>0 1362<span class="Apple-converted-space">    </span>1<span class="Apple-converted-space">    </span>0</span></p>
+<p class="p13"><span class="s1">##<span class="Apple-converted-space">          </span>D<span class="Apple-converted-space">    </span>0<span class="Apple-converted-space">    </span>0<span class="Apple-converted-space">    </span>1 1285<span class="Apple-converted-space">    </span>1</span></p>
+<p class="p13"><span class="s1">##<span class="Apple-converted-space">          </span>E<span class="Apple-converted-space">    </span>0<span class="Apple-converted-space">    </span>0<span class="Apple-converted-space">    </span>0<span class="Apple-converted-space">    </span>0 1441</span></p>
+<p class="p13"><span class="s1">##<span class="Apple-converted-space"> </span></span></p>
+<p class="p13"><span class="s1">## Overall Statistics</span></p>
+<p class="p13"><span class="s1">##<span class="Apple-converted-space">                                           </span></span></p>
+<p class="p13"><span class="s1">##<span class="Apple-converted-space">                </span>Accuracy : 0.9989 <span class="Apple-converted-space">         </span></span></p>
+<p class="p13"><span class="s1">##<span class="Apple-converted-space">                  </span>95% CI : (0.9978, 0.9995)</span></p>
+<p class="p13"><span class="s1">## <span class="Apple-converted-space">    </span>No Information Rate : 0.2845 <span class="Apple-converted-space">         </span></span></p>
+<p class="p13"><span class="s1">## <span class="Apple-converted-space">    </span>P-Value [Acc &gt; NIR] : &lt; 2.2e-16<span class="Apple-converted-space">       </span></span></p>
+<p class="p13"><span class="s1">##<span class="Apple-converted-space">                                           </span></span></p>
+<p class="p13"><span class="s1">## <span class="Apple-converted-space">                  </span>Kappa : 0.9985 <span class="Apple-converted-space">         </span></span></p>
+<p class="p13"><span class="s1">##<span class="Apple-converted-space">  </span>Mcnemar's Test P-Value : NA <span class="Apple-converted-space">             </span></span></p>
+<p class="p13"><span class="s1">##<span class="Apple-converted-space"> </span></span></p>
+<p class="p13"><span class="s1">## Statistics by Class:</span></p>
+<p class="p13"><span class="s1">##<span class="Apple-converted-space"> </span></span></p>
+<p class="p13"><span class="s1">##<span class="Apple-converted-space">                      </span>Class: A Class: B Class: C Class: D Class: E</span></p>
+<p class="p13"><span class="s1">## Sensitivity<span class="Apple-converted-space">            </span>0.9996 <span class="Apple-converted-space">  </span>1.0000 <span class="Apple-converted-space">  </span>0.9956 <span class="Apple-converted-space">  </span>0.9992 <span class="Apple-converted-space">  </span>0.9993</span></p>
+<p class="p13"><span class="s1">## Specificity<span class="Apple-converted-space">            </span>1.0000 <span class="Apple-converted-space">  </span>0.9991 <span class="Apple-converted-space">  </span>0.9998 <span class="Apple-converted-space">  </span>0.9997 <span class="Apple-converted-space">  </span>1.0000</span></p>
+<p class="p13"><span class="s1">## Pos Pred Value <span class="Apple-converted-space">        </span>1.0000 <span class="Apple-converted-space">  </span>0.9961 <span class="Apple-converted-space">  </span>0.9993 <span class="Apple-converted-space">  </span>0.9984 <span class="Apple-converted-space">  </span>1.0000</span></p>
+<p class="p13"><span class="s1">## Neg Pred Value <span class="Apple-converted-space">        </span>0.9998 <span class="Apple-converted-space">  </span>1.0000 <span class="Apple-converted-space">  </span>0.9991 <span class="Apple-converted-space">  </span>0.9998 <span class="Apple-converted-space">  </span>0.9998</span></p>
+<p class="p13"><span class="s1">## Prevalence <span class="Apple-converted-space">            </span>0.2845 <span class="Apple-converted-space">  </span>0.1935 <span class="Apple-converted-space">  </span>0.1744 <span class="Apple-converted-space">  </span>0.1639 <span class="Apple-converted-space">  </span>0.1838</span></p>
+<p class="p13"><span class="s1">## Detection Rate <span class="Apple-converted-space">        </span>0.2843 <span class="Apple-converted-space">  </span>0.1935 <span class="Apple-converted-space">  </span>0.1736 <span class="Apple-converted-space">  </span>0.1638 <span class="Apple-converted-space">  </span>0.1837</span></p>
+<p class="p13"><span class="s1">## Detection Prevalence <span class="Apple-converted-space">  </span>0.2843 <span class="Apple-converted-space">  </span>0.1942 <span class="Apple-converted-space">  </span>0.1737 <span class="Apple-converted-space">  </span>0.1640 <span class="Apple-converted-space">  </span>0.1837</span></p>
+<p class="p13"><span class="s1">## Balanced Accuracy<span class="Apple-converted-space">      </span>0.9998 <span class="Apple-converted-space">  </span>0.9995 <span class="Apple-converted-space">  </span>0.9977 <span class="Apple-converted-space">  </span>0.9995 <span class="Apple-converted-space">  </span>0.9997</span></p>
+<p class="p4"><span class="s1">And confirmed the accuracy at validating data set by calculate it with the formula:</span></p>
+<p class="p8"><span class="s1">accuracy &lt;-</span><span class="s4"><b>c</b></span><span class="s1">(</span><span class="s4"><b>as.numeric</b></span><span class="s1">(</span><span class="s4"><b>predict</b></span><span class="s1">(model,</span><span class="s6">newdata=</span><span class="s1">validating[,-</span><span class="s4"><b>ncol</b></span><span class="s1">(validating)])==validating$classe))</span></p>
+<p class="p9"><span class="s1"><br>
+</span></p>
+<p class="p8"><span class="s1">accuracy &lt;-</span><span class="s4"><b>sum</b></span><span class="s1">(accuracy)*</span><span class="s8">100</span><span class="s1">/</span><span class="s4"><b>nrow</b></span><span class="s1">(validating)</span></p>
+<p class="p4"><span class="s1">Model Accuracy as tested over Validation set = 99.9%.</span></p>
+<h3 style="margin: 0.0px 0.0px 10.0px 0.0px; line-height: 28.0px; font: 24.0px Times; color: #333333; -webkit-text-stroke: #333333"><span class="s1">Model Test</span></h3>
+<p class="p4"><span class="s1">Finally, we proceed with predicting the new values in the testing csv provided, first we apply the same data cleaning operations on it and coerce all columns of testing data set for the same class of previous data set.</span></p>
+<h4 style="margin: 0.0px 0.0px 10.0px 0.0px; line-height: 22.0px; font: 18.0px Times; color: #333333; -webkit-text-stroke: #333333"><span class="s1">Getting Testing Dataset</span></h4>
+<p class="p12"><span class="s5">testingLink &lt;-</span><span class="s1"> </span><span class="s4"><b>getURL</b></span><span class="s5">(</span><span class="s1">"http://d396qusza40orc.cloudfront.net/predmachlearn/pml-testing.csv"</span><span class="s5">)</span></p>
+<p class="p8"><span class="s1">pml_CSV<span class="Apple-converted-space">  </span>&lt;-</span><span class="s7"> </span><span class="s4"><b>read.csv</b></span><span class="s1">(</span><span class="s6">text =</span><span class="s1"> testingLink, </span><span class="s6">header=</span><span class="s4">TRUE</span><span class="s1">, </span><span class="s6">sep=</span><span class="s7">","</span><span class="s1">, </span><span class="s6">na.strings=</span><span class="s4"><b>c</b></span><span class="s1">(</span><span class="s7">"NA"</span><span class="s1">,</span><span class="s7">""</span><span class="s1">))</span></p>
+<p class="p9"><span class="s1"><br>
+</span></p>
+<p class="p7"><span class="s5">pml_CSV &lt;-</span><span class="s7"> </span><span class="s5">pml_CSV[,-</span><span class="s8">1</span><span class="s5">] </span><span class="s1"><i># Remove the first column that represents a ID Row</i></span></p>
+<p class="p7"><span class="s5">pml_CSV &lt;-</span><span class="s7"> </span><span class="s5">pml_CSV[ , Keep] </span><span class="s1"><i># Keep the same columns of testing dataset</i></span></p>
+<p class="p8"><span class="s1">pml_CSV &lt;-</span><span class="s7"> </span><span class="s1">pml_CSV[,-</span><span class="s4"><b>ncol</b></span><span class="s1">(pml_CSV)] </span><span class="s9"><i># Remove the problem ID</i></span></p>
+<p class="p9"><span class="s1"><br>
+</span></p>
+<p class="p7"><span class="s1"><i># Apply the Same Transformations and Coerce Testing Dataset</i></span></p>
+<p class="p9"><span class="s1"><br>
+</span></p>
+<p class="p7"><span class="s1"><i># Coerce testing dataset to same class and strucuture of training dataset<span class="Apple-converted-space"> </span></i></span></p>
+<p class="p8"><span class="s1">testing &lt;-</span><span class="s7"> </span><span class="s4"><b>rbind</b></span><span class="s1">(training[</span><span class="s8">100</span><span class="s1">, -</span><span class="s8">59</span><span class="s1">] , pml_CSV)<span class="Apple-converted-space"> </span></span></p>
+<p class="p7"><span class="s1"><i># Apply the ID Row to row.names and 100 for dummy row from testing dataset<span class="Apple-converted-space"> </span></i></span></p>
+<p class="p8"><span class="s4"><b>row.names</b></span><span class="s1">(testing) &lt;-</span><span class="s7"> </span><span class="s4"><b>c</b></span><span class="s1">(</span><span class="s8">100</span><span class="s1">, </span><span class="s8">1</span><span class="s1">:</span><span class="s8">20</span><span class="s1">)</span></p>
+<h4 style="margin: 0.0px 0.0px 10.0px 0.0px; line-height: 22.0px; font: 18.0px Times; color: #333333; -webkit-text-stroke: #333333"><span class="s1">Predicting with testing dataset</span></h4>
+<p class="p8"><span class="s1">predictions &lt;-</span><span class="s7"> </span><span class="s4"><b>predict</b></span><span class="s1">(model,</span><span class="s6">newdata=</span><span class="s1">testing[-</span><span class="s8">1</span><span class="s1">,])</span></p>
+<p class="p8"><span class="s4"><b>print</b></span><span class="s1">(predictions)</span></p>
+<p class="p13"><span class="s1">##<span class="Apple-converted-space">  </span>1<span class="Apple-converted-space">  </span>2<span class="Apple-converted-space">  </span>3<span class="Apple-converted-space">  </span>4<span class="Apple-converted-space">  </span>5<span class="Apple-converted-space">  </span>6<span class="Apple-converted-space">  </span>7<span class="Apple-converted-space">  </span>8<span class="Apple-converted-space">  </span>9 10 11 12 13 14 15 16 17 18 19 20<span class="Apple-converted-space"> </span></span></p>
+<p class="p13"><span class="s1">##<span class="Apple-converted-space">  </span>B<span class="Apple-converted-space">  </span>A<span class="Apple-converted-space">  </span>B<span class="Apple-converted-space">  </span>A<span class="Apple-converted-space">  </span>A<span class="Apple-converted-space">  </span>E<span class="Apple-converted-space">  </span>D<span class="Apple-converted-space">  </span>B<span class="Apple-converted-space">  </span>A<span class="Apple-converted-space">  </span>A<span class="Apple-converted-space">  </span>B<span class="Apple-converted-space">  </span>C<span class="Apple-converted-space">  </span>B<span class="Apple-converted-space">  </span>A<span class="Apple-converted-space">  </span>E<span class="Apple-converted-space">  </span>E<span class="Apple-converted-space">  </span>A<span class="Apple-converted-space">  </span>B<span class="Apple-converted-space">  </span>B<span class="Apple-converted-space">  </span>B<span class="Apple-converted-space"> </span></span></p>
+<p class="p13"><span class="s1">## Levels: A B C D E</span></p>
+<h4 style="margin: 0.0px 0.0px 10.0px 0.0px; line-height: 22.0px; font: 18.0px Times; color: #333333; -webkit-text-stroke: #333333"><span class="s1">The following function to create the files to answers the Prediction Assignment Submission:</span></h4>
+<p class="p8"><span class="s1">pml_write_files =</span><span class="s7"> </span><span class="s1">function(x){</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">  </span>n =</span><span class="s7"> </span><span class="s4"><b>length</b></span><span class="s1">(x)</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">  </span>for(i in </span><span class="s8">1</span><span class="s1">:n){</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span>filename =</span><span class="s7"> </span><span class="s4"><b>paste0</b></span><span class="s1">(pathAnswers,</span><span class="s7">"answers/problem_id_"</span><span class="s1">,i,</span><span class="s7">".txt"</span><span class="s1">)</span></p>
+<p class="p10"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s4"><b>write.table</b></span><span class="s5">(x[i],</span><span class="s1">file=</span><span class="s5">filename,</span><span class="s1">quote=</span><span class="s4">FALSE</span><span class="s5">,</span><span class="s1">row.names=</span><span class="s4">FALSE</span><span class="s5">,</span><span class="s1">col.names=</span><span class="s4">FALSE</span><span class="s5">)</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p8"><span class="s1">}</span></p>
+<p class="p9"><span class="s1"><br>
+</span></p>
+<p class="p11"><span class="s1"><b>pml_write_files</b></span><span class="s5">(predictions)</span></p>
+<p class="p9"><span class="s1"><br>
+</span></p>
+<p class="p7"><span class="s1"><i>#get the time</i></span></p>
+<p class="p8"><span class="s1">endTime &lt;-</span><span class="s7"> </span><span class="s4"><b>Sys.time</b></span><span class="s1">()</span></p>
+<p class="p14"><span class="s1"></span><br></p>
+</body>
+</html>
